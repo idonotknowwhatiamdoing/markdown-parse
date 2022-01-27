@@ -20,8 +20,11 @@ public class MarkdownParse {
             int openParen = nextCloseBracket + 1; //markdown.indexOf("(", nextCloseBracket);
             char possibleOpenParam = markdown.charAt(openParen);
 
-            if (markdown.charAt(nextCloseBracket + 1) == '(' && (markdown.indexOf(")", currentIndex) < markdown.indexOf("[", nextCloseBracket) ||
-             markdown.indexOf("[", nextCloseBracket) == -1 && markdown.indexOf(")", currentIndex) != -1)) {
+            if (nextOpenBracket == -1 || nextCloseBracket == -1) break;
+            if (possibleOpenParam != '(') break;
+
+            if ((markdown.charAt(nextCloseBracket + 1) == '(' && (markdown.indexOf(")", currentIndex) < markdown.indexOf("[", nextCloseBracket)) ||
+             (markdown.indexOf("[", nextCloseBracket) == -1 && markdown.indexOf(")", currentIndex) != -1))) {
                 int closeParen = markdown.indexOf(")", openParen);
                 toReturn.add(markdown.substring(openParen + 1, closeParen));
                 currentIndex = closeParen + 1;
