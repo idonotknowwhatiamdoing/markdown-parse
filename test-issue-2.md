@@ -1,1 +1,2 @@
-[invalid link](not a url
+[link](link.com)
+![image](image link)

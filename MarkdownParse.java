@@ -20,6 +20,7 @@ public class MarkdownParse {
             int openParen = nextCloseBracket + 1; //markdown.indexOf("(", nextCloseBracket);
             char possibleOpenParam = markdown.charAt(openParen);
 
+            if (nextOpenBracket != 0 && markdown.charAt(nextOpenBracket - 1) == '!') break;
             if (nextOpenBracket == -1 || nextCloseBracket == -1) break;
             if (possibleOpenParam != '(') break;
 
