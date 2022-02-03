@@ -7,6 +7,7 @@ import java.nio.file.Path;
 import java.util.*;
 
 public class MarkdownParseTestNew {
+
     @Test
     public void addition() {
         assertEquals(2, 1 + 1);
@@ -19,9 +20,11 @@ public class MarkdownParseTestNew {
     }
 
     @Test
-    public void noParentheses() throws IOException {
+    public void hasImage() throws IOException {
+        ArrayList<String> hasImage = new ArrayList<String>();
+        hasImage.add("link.com");
         String contents = Files.readString(Path.of("./test-issue-2.md"));
-        assertEquals(new ArrayList<>(), MarkdownParse.getLinks(contents));
+        assertEquals(hasImage, MarkdownParse.getLinks(contents));
     }
 
     @Test
