@@ -1,8 +1,8 @@
-test: MarkdownParse.class MarkdownParseTest.class
-    java -cp .:./lib/* org.junit.runner.JUnitCore MarkdownParseTest
+test: MarkdownParse.class MarkdownParseTestNew.class
+    java -cp .:./lib/* org.junit.runner.JUnitCore MarkdownParseTestNew
  
-MarkdownParse.class : MarkdownParse.java
+MarkdownParse.class: MarkdownParse.java
     javac -cp .:./lib/* MarkdownParse.java
  
-MarkdownParseTest.class: MarkdownParseTest.java MarkdownParse.class
-    javac -cp .:./lib/* MarkdownParseTest.java
+MarkdownParseTest.class: MarkdownParseTestNew.java MarkdownParse.class
+    javac -cp .:./lib/* MarkdownParseTestNew.java
