@@ -29,6 +29,6 @@ jobs:
       - name: Compile and run our JUnit tests, also test out echo
         run: |
           echo The directory is: $GITHUB_WORKSPACE
-          make
-          #javac -cp .:lib/junit-4.12.jar:lib/hamcrest-core-1.3.jar MarkdownParseTestNew.java MarkdownParse.java
-          #java -cp .:lib/junit-4.12.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MarkdownParseTestNew
+          make 
+        # javac -cp .:lib/junit-4.12.jar:lib/hamcrest-core-1.3.jar MarkdownParseTestNew.java MarkdownParse.java
+        # java -cp .:lib/junit-4.12.jar:lib/hamcrest-core-1.3.jar org.junit.runner.JUnitCore MarkdownParseTestNew
